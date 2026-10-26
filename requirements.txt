@@ -50,7 +50,7 @@ langchain-nvidia-ai-endpoints # LangChain integration with NVIDIA AI Endpoints
 portkey-ai                  # Portkey Gateway for unified LLM routing, fallbacks & observability
 
 # --- EVALUATION (EVALS) ---
-ragas                       # RAG-specific evaluation metrics (Faithfulness, Relevancy, Recall)
+ragas>=0.4.3,<0.5           # Evaluation metric collections used by the eval suite
 deepeval                    # Pytest-compatible test runner wrapping RAGAS & safety metrics
 langfuse                    # Live production monitoring, tracing & user feedback collection
 

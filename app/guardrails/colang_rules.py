@@ -101,7 +101,7 @@ YAML_CONTENT = """
 models:
   - type: main
     engine: openai
-    model: gpt-3.5-turbo
+    model: openai/gpt-oss-120b
 
 instructions:
   - type: general
