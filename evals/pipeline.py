@@ -13,7 +13,7 @@ import os
 import requests
 import logfire
 
-API_URL = "http://localhost:8000/query"
+API_URL = os.getenv("COGNIVAULT_API_URL", "http://localhost:8000/query")
 RESPONSE_TRUNCATE = 300
 DELAY_BETWEEN_CALLS = 10   # seconds — stays within Groq RPM on the main key
 REQUEST_TIMEOUT = 120      # seconds — guardrails + LangGraph + Groq can take >60s
@@ -85,7 +85,7 @@ def run_pipeline(golden_dataset: dict, progress_callback=None) -> dict:
                     )
 
                 except requests.exceptions.ConnectionError:
-                    logfire.error("❌ Cannot reach FastAPI — is the app running on :8000?")
+                    logfire.error(f"❌ Cannot reach FastAPI at {API_URL}.")
                     sample["actual_response"] = ""
                     sample["actual_contexts"] = sample.get("relevant_contexts", [])
                     sample["actual_tools_called"] = ["unknown"]

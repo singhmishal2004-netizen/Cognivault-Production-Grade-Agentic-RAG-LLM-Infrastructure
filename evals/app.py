@@ -171,12 +171,13 @@ with tab1:
 with tab2:
     st.subheader("Live Pipeline — Collect Real Responses")
     st.markdown(
-        "Sends each golden question to your **running FastAPI app** (`localhost:8000/query`). "
+        "Sends each golden question to your **running FastAPI app** "
+        f"(`{os.getenv('COGNIVAULT_API_URL', 'http://localhost:8000/query')}`). "
         "Captures the actual response, retrieved contexts, and tool called. "
         "Responses are truncated to 300 chars to save tokens for the RAGAS judging step."
     )
     st.info(
-        "⚠️ Make sure your FastAPI backend is running first: `uvicorn app.main:app --reload --port 8000`",
+        "⚠️ Make sure your FastAPI backend is running and reachable at the configured API URL.",
         icon="⚠️",
     )
 

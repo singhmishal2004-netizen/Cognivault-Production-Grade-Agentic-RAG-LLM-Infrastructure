@@ -53,6 +53,8 @@ portkey-ai                  # Portkey Gateway for unified LLM routing, fallbacks
 ragas>=0.4.3,<0.5           # Evaluation metric collections used by the eval suite
 deepeval                    # Pytest-compatible test runner wrapping RAGAS & safety metrics
 langfuse                    # Live production monitoring, tracing & user feedback collection
+pandas                      # Evaluation tables and result summaries
+openai                      # AsyncOpenAI client for the RAGAS judge
 
 # --- EMBEDDINGS (SENTENCE TRANSFORMERS) ---
 sentence-transformers       # Used by FlashRank reranker internally
